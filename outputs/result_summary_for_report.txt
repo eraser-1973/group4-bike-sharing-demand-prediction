@@ -1,0 +1,36 @@
+Experimental Result Summary
+
+Best model based on holdout RMSE: CART Regression Tree
+
+Main holdout results of the best model:
+- RMSE: 102.8421
+- MAE: 64.4873
+- R2: 0.7827
+- Peak Accuracy: 0.8862
+- Peak Precision: 0.8644
+- Peak Recall: 0.8527
+- Peak F1: 0.8585
+- Training Time: 0.5099 seconds
+
+Model ranking by holdout RMSE:
+1. CART Regression Tree: RMSE=102.8421, MAE=64.4873, R2=0.7827, Peak F1=0.8585
+2. KNN Regression: RMSE=114.8860, MAE=73.5630, R2=0.7288, Peak F1=0.8089
+3. Gradient Boosting Trees: RMSE=130.8039, MAE=76.2981, R2=0.6485, Peak F1=0.8422
+4. Ridge Linear Regression GD: RMSE=517.2453, MAE=205.2428, R2=-4.4969, Peak F1=0.8450
+
+Interpretation:
+The best-performing model is CART Regression Tree because it achieves the lowest RMSE on the chronological holdout test set. RMSE, MAE and R2 evaluate the regression accuracy of hourly bike-sharing demand prediction, while Peak F1 evaluates the ability to identify high-demand periods. A high Peak F1 score is important because the project aims not only to predict the number of bike rentals, but also to support early warning of potential demand imbalance.
+
+The comparison shows that nonlinear models are more suitable than the linear baseline for this task. Bike-sharing demand is affected by complex interactions among hour, working day, weather, temperature, humidity and historical demand features. Therefore, tree-based models can capture threshold-based and nonlinear patterns more effectively than a simple linear model.
+
+Generated output files:
+- cv_results_by_fold.csv
+- cv_summary.csv
+- holdout_results.csv
+- holdout_predictions.csv
+- model_rmse_comparison.png
+- model_mae_comparison.png
+- model_r2_comparison.png
+- peak_f1_comparison.png
+- actual_vs_predicted_best_model.png
+- residual_diagnostic_best_model.png
